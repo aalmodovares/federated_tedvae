@@ -7,6 +7,10 @@ The implementation is done in Tensorflow, with support of Tensorflow probability
 
 Please, install the requirements in requirements.txt
 
+''''
+pip install -r requirements.txt
+''''
+
 To run the simulation example, you can use the notebook: ihdp_b_example.ipynb
 
 Check that results are stored in results/{data_setting}/{imbalance}. Where data settings included in this code are: IHDP setting B ('tedvae_ihdp') and IHDP setting A ('tedvae_ihdp_a'). You can include more imbalances by modifying the script imbalances.py
