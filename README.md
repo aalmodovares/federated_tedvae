@@ -47,6 +47,8 @@ Datasets included are the same as in TEDVAE repository. 100 replications of each
 
 ## EXTRA RESOURCES
 
+Code is prepared to do an ablation study of the federated modules in the whole TEDVAE model. Comparison methods: FedCI [2] and CausalRFF [3] are not included in this GitHUB.
+
 If you need code to run FedCI or CausalRFF for comparison, or if you find it difficult to find more datasets on causal inference (ACIC2016, TWINS, JOBS) do not hesitate to contact me: 
 
 alejandro.almodovar@upm.es
@@ -65,3 +67,8 @@ url={https://openreview.net/forum?id=r7qL5vM3Aa}
 }
 ````
 [1] W. Zhang, L. Liu, and J. Li, “Treatment effect estimation with disentangled latent factors,” in AAAI Conference on Artificial Intelligence, 2020.
+[2] V. Vo, T. N. Hoang, Y. Lee, and T.-Y. Leong, “Federated estimation of causal effects from
+observational data,” 2021.
+[3] T. V. Vo, A. Bhattacharyya, Y. Lee, and T.-Y. Leong, “An adaptive kernel approach to federated
+learning of heterogeneous causal effects,” Advances in Neural Information Processing Systems,
+vol. 35, pp. 24459–24473, 2022
