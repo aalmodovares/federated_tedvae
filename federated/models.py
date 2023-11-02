@@ -711,8 +711,8 @@ class FedTEDVAE(keras.Model):
     def compute_ites(self, features, y_scaler,  y_factual=None, t_factual=None):
         ites_list = []
         for i in range(self.num_domains):
-            y_i = y_factual[i] if y_factual is not None else None #todo: check dimensions
-            t_i = t_factual[i] if t_factual is not None else None #todo: check dimensions
+            y_i = y_factual[i] if y_factual is not None else None
+            t_i = t_factual[i] if t_factual is not None else None
             ites, _, _ = self.local_units[i].ite(features[i], y_scaler, y_factual= y_i, t_factual=t_i)
             ites_list.append(ites)
 

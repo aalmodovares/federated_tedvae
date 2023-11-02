@@ -60,7 +60,7 @@ path = Path(args.resultspath)
 
 print_all = False
 plot_all = False
-print_latex = True
+print_latex = False
 
 
 # Open a file for writing
@@ -272,37 +272,8 @@ df['Setting'] = df['fed_case'].apply(extract_pattern)
 #convert ITE dtype to float32
 df['PEHE'] = df['PEHE'].astype('float32')
 
-
-#plot boxplot of distribution of PEHE for each domain in the same figure
-#domain 'none' is in both two subplots and the hue is 'train' column, x ticks are the 'fed_case' column
-
 #Get the unique values of fed_case
 fed_cases = df['Setting'].unique()
-
-'''#define a figure with as columns subplots as the number of domains and as rows the number of imbalance levels
-fig, axes = plt.subplots(nrows=len(imbalances), ncols=n_nodes, figsize=(20,5*len(imbalances)))
-#plot boxplot of distribution of PEHE for each domain and each imbalance level in a different subplot, and include 'none' domain in both subplots
-for i, imbalance in enumerate(df['imbalance'].unique()):
-    num_patients_list = imbalance.split(',')
-    nodes_imbalance = [f'{num_patients_list[i]}/{num_patients_list[i + 1]}' for i in range(0, len(num_patients_list), 2)]
-
-    for j in range(n_nodes):
-        sns.boxplot(x='Setting', y='PEHE', hue='train',
-                    data=df[((df['imbalance'] == nodes_imbalance[j]) + (df['imbalance'] == imbalance)) &
-                            ((df['domain'] == (j + 1)) + (df['domain'] == 'none'))],
-                            ax=axes[i, j], order=fed_cases)
-        title = f'domain: {j+1} - imbalance:'
-        for jjj,node_imbalance in enumerate(nodes_imbalance):
-            if jjj== j:
-                title += f'*{node_imbalance}* - '
-            else:
-                title += f'{node_imbalance} - '
-        axes[i, j].set_title(title)
-plt.savefig(path /'ITEerr_boxplot.png')
-if plot_all:
-    plt.show()
-plt.close()'''
-#
 
 
 #plot mean of errors for each domain. X axis is the imbalance level and the hue is the train column. Use fill between to plot the std
@@ -453,45 +424,6 @@ statistics_df['mean(std)'] = statistics_df.apply(
 statistics_df = statistics_df.drop(columns=['median', 'percentile_25', 'percentile_75'])
 statistics_df = statistics_df.drop(columns=['mean', 'std'])
 
-# print(statistics_df)
-
-
-'''## TABLE 1
-# Create a new DataFrame with multi-index
-multiindex_df = statistics_df.pivot(index=['domain', 'train/test'], columns='Setting')
-# Sort the columns by the second level of the multi-inde
-multiindex_df = multiindex_df.sort_index(level=[0,1], ascending=[True, False])
-
-df_t = multiindex_df.T
-# Adjust display options
-pd.set_option('display.max_columns', None)  # Display all columns
-pd.set_option('display.expand_frame_repr', False)  # Do not wrap the DataFrame
-pd.set_option('display.max_colwidth', None)  # Display long strings without truncation
-print(df_t)'''
-
-'''## TABLE 2
-# Filter imbalance levels to be displayed
-displayed_imbalances = ['']
-# Create a train dataframe
-train_statistics_df = statistics_df [statistics_df['train/test'] == 'train'].drop('train/test', axis=1)
-#Create a test dataframe
-test_statistics_df = statistics_df[statistics_df ['train/test'] == 'test'].drop('train/test', axis=1)
-# create multiindex train
-multiindex_train_df = train_statistics_df.pivot(index=['domain', 'imbalance'], columns='Setting')
-# Create multiindex test
-multiindex_test_df = test_statistics_df.pivot(index=['domain', 'imbalance'], columns='Setting')
-
-df_train = multiindex_train_df.T
-df_test = multiindex_test_df.T
-# Adjust display options
-pd.set_option('display.max_columns', None)  # Display all columns
-pd.set_option('display.expand_frame_repr', False)  # Do not wrap the DataFrame
-pd.set_option('display.max_colwidth', None)  # Display long strings without truncation
-print('IN SAMPLE RESULTS')
-print(df_train)
-print('OUT OF SAMPLE RESULTS')
-print(df_test)'''
-
 
 
 list_of_imbalances = list(df['imbalance'].unique())
@@ -510,35 +442,6 @@ for n in range(n_nodes):
         else:
             treated_untreated['domain '+str(n+1)]['treated'].append(int(item.split(',')[2*n]))
             treated_untreated['domain '+str(n+1)]['untreated'].append(int(item.split(',')[2*n+1]))
-#
-#
-#
-# domain1_treated = []
-# domain1_untreated = []
-# domain2_treated = []
-# domain2_untreated = []
-# for item in list_of_imbalances:
-#     if item.split(',')[1] == 'random':
-#         # load dataset only when necessary (random split)
-#         file = open(data_path / imbalances / item, 'rb')
-#         data = pickle.load(file)
-#         file.close()
-#         domain1_treated.append(data.split_info[0][0])
-#         domain1_untreated.append(data.split_info[0][1])
-#         domain2_treated.append(data.split_info[1][0])
-#         domain2_untreated.append(data.split_info[1][1])
-#     else:
-#         domain1_treated.append(int(item.split(',')[0]))
-#         domain1_untreated.append(int(item.split(',')[1]))
-#         domain2_treated.append(int(item.split(',')[2]))
-#         domain2_untreated.append(int(item.split(',')[3]))
-
-
-    # domain1_treated = [int(item.split(',')[0]) for item in list_of_imbalances]
-    # domain1_untreated = [item.split(',')[1] for item in list_of_imbalances]
-    # domain2_treated = [int(item.split(',')[2]) for item in list_of_imbalances]
-    # domain2_untreated = [item.split(',')[3] for item in list_of_imbalances]
-
 
 # Creating the figure and subplots
 fig_imb, axs_imb = plt.subplots(1, 2, figsize=(10, 5), sharey=True)
