@@ -1,0 +1,2 @@
+n_epochs,n_epochs_fed_avg,w_disentanglement,w_kl,w_reconstruction,w_model
+201,10,20,1,1,1

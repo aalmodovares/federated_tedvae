@@ -1,0 +1,9 @@
+tensorflow
+tensorflow-probability
+scikit-learn
+pathlib
+tabulate
+matplotlib
+pandas
+seaborn
+jupyter

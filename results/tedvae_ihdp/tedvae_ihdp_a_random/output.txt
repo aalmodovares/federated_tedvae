@@ -1,0 +1,149 @@
+IN SAMPLE RESULTS - tedvae_ihdp_a_random
+
+
+MEDIAN (p25/p75)
+
+
+\begin{tabular}{lll}
+\toprule
+domain & 1 & 2 \\
+imbalance & 83/random & 83/random \\
+Setting &  &  \\
+\midrule
+TV Cen & 2.92(2.92, 2.92) & 2.92(2.92, 2.92) \\
+TV FedAvg & 3.69(3.69, 3.69) & 3.02(3.02, 3.02) \\
+TV FedAvg Vanilla & 3.69(3.69, 3.69) & 2.94(2.94, 2.94) \\
+TV Iso & 3.41(3.41, 3.41) & 2.83(2.83, 2.83) \\
+\bottomrule
+\end{tabular}
+
+MEAN (std)
+
+
+\begin{tabular}{lll}
+\toprule
+domain & 1 & 2 \\
+imbalance & 83/random & 83/random \\
+Setting &  &  \\
+\midrule
+TV Cen & 2.92(0.00) & 2.92(0.00) \\
+TV FedAvg & 3.69(0.00) & 3.02(0.00) \\
+TV FedAvg Vanilla & 3.69(0.00) & 2.94(0.00) \\
+TV Iso & 3.41(0.00) & 2.83(0.00) \\
+\bottomrule
+\end{tabular}
+
+OUT OF SAMPLE RESULTS - tedvae_ihdp_a_random
+
+
+MEDIAN (p25/p75)
+
+
+\begin{tabular}{lll}
+\toprule
+domain & 1 & 2 \\
+imbalance & 83/random & 83/random \\
+Setting &  &  \\
+\midrule
+TV Cen & 3.41(3.41, 3.41) & 3.41(3.41, 3.41) \\
+TV FedAvg & 4.54(4.54, 4.54) & 3.80(3.80, 3.80) \\
+TV FedAvg Vanilla & 4.68(4.68, 4.68) & 3.61(3.61, 3.61) \\
+TV Iso & 4.23(4.23, 4.23) & 3.59(3.59, 3.59) \\
+\bottomrule
+\end{tabular}
+
+MEAN (std)
+
+
+\begin{tabular}{lll}
+\toprule
+domain & 1 & 2 \\
+imbalance & 83/random & 83/random \\
+Setting &  &  \\
+\midrule
+TV Cen & 3.41(0.00) & 3.41(0.00) \\
+TV FedAvg & 4.54(0.00) & 3.80(0.00) \\
+TV FedAvg Vanilla & 4.68(0.00) & 3.61(0.00) \\
+TV Iso & 4.23(0.00) & 3.59(0.00) \\
+\bottomrule
+\end{tabular}
+
+
+
+
+train/test                                 In-sample                       Out-of-sample                  
+domain                                             1                 2                 1                 2
+imbalance                                  83/random         83/random         83/random         83/random
+                 Setting                                                                                  
+mean(std)        TV Cen                   2.92(0.00)        2.92(0.00)        3.41(0.00)        3.41(0.00)
+                 TV FedAvg                3.69(0.00)        3.02(0.00)        4.54(0.00)        3.80(0.00)
+                 TV FedAvg Vanilla        3.69(0.00)        2.94(0.00)        4.68(0.00)        3.61(0.00)
+                 TV Iso                   3.41(0.00)        2.83(0.00)        4.23(0.00)        3.59(0.00)
+median(P25, P75) TV Cen             2.92(2.92, 2.92)  2.92(2.92, 2.92)  3.41(3.41, 3.41)  3.41(3.41, 3.41)
+                 TV FedAvg          3.69(3.69, 3.69)  3.02(3.02, 3.02)  4.54(4.54, 4.54)  3.80(3.80, 3.80)
+                 TV FedAvg Vanilla  3.69(3.69, 3.69)  2.94(2.94, 2.94)  4.68(4.68, 4.68)  3.61(3.61, 3.61)
+                 TV Iso             3.41(3.41, 3.41)  2.83(2.83, 2.83)  4.23(4.23, 4.23)  3.59(3.59, 3.59)
+
+
+
+\begin{tabular}{llllll}
+\toprule
+ & train/test & \multicolumn{2}{r}{In-sample} & \multicolumn{2}{r}{Out-of-sample} \\
+ & domain & 1 & 2 & 1 & 2 \\
+ & imbalance & 83/random & 83/random & 83/random & 83/random \\
+ & Setting &  &  &  &  \\
+\midrule
+\multirow[t]{4}{*}{mean(std)} & TV Cen & 2.92(0.00) & 2.92(0.00) & 3.41(0.00) & 3.41(0.00) \\
+ & TV FedAvg & 3.69(0.00) & 3.02(0.00) & 4.54(0.00) & 3.80(0.00) \\
+ & TV FedAvg Vanilla & 3.69(0.00) & 2.94(0.00) & 4.68(0.00) & 3.61(0.00) \\
+ & TV Iso & 3.41(0.00) & 2.83(0.00) & 4.23(0.00) & 3.59(0.00) \\
+\cline{1-6}
+\multirow[t]{4}{*}{median(P25, P75)} & TV Cen & 2.92(2.92, 2.92) & 2.92(2.92, 2.92) & 3.41(3.41, 3.41) & 3.41(3.41, 3.41) \\
+ & TV FedAvg & 3.69(3.69, 3.69) & 3.02(3.02, 3.02) & 4.54(4.54, 4.54) & 3.80(3.80, 3.80) \\
+ & TV FedAvg Vanilla & 3.69(3.69, 3.69) & 2.94(2.94, 2.94) & 4.68(4.68, 4.68) & 3.61(3.61, 3.61) \\
+ & TV Iso & 3.41(3.41, 3.41) & 2.83(2.83, 2.83) & 4.23(4.23, 4.23) & 3.59(3.59, 3.59) \\
+\cline{1-6}
+\bottomrule
+\end{tabular}
+
+train/test          In-sample             Out-of-sample            
+domain                      1           2             1           2
+imbalance           83/random   83/random     83/random   83/random
+Setting                                                            
+TV Cen             2.92(0.00)  2.92(0.00)    3.41(0.00)  3.41(0.00)
+TV FedAvg          3.69(0.00)  3.02(0.00)    4.54(0.00)  3.80(0.00)
+TV FedAvg Vanilla  3.69(0.00)  2.94(0.00)    4.68(0.00)  3.61(0.00)
+TV Iso             3.41(0.00)  2.83(0.00)    4.23(0.00)  3.59(0.00)
+
+
+
+\begin{tabular}{lllll}
+\toprule
+train/test & \multicolumn{2}{r}{In-sample} & \multicolumn{2}{r}{Out-of-sample} \\
+domain & 1 & 2 & 1 & 2 \\
+imbalance & 83/random & 83/random & 83/random & 83/random \\
+Setting &  &  &  &  \\
+\midrule
+TV Cen & 2.92(0.00) & 2.92(0.00) & 3.41(0.00) & 3.41(0.00) \\
+TV FedAvg & 3.69(0.00) & 3.02(0.00) & 4.54(0.00) & 3.80(0.00) \\
+TV FedAvg Vanilla & 3.69(0.00) & 2.94(0.00) & 4.68(0.00) & 3.61(0.00) \\
+TV Iso & 3.41(0.00) & 2.83(0.00) & 4.23(0.00) & 3.59(0.00) \\
+\bottomrule
+\end{tabular}
+
+
+
+
+\begin{tabular}{lll}
+\toprule
+domain & 1 & 2 \\
+imbalance & 83/random & 83/random \\
+Setting &  &  \\
+\midrule
+TV Cen & 3.41(0.00) & 3.41(0.00) \\
+TV FedAvg & 4.54(0.00) & 3.80(0.00) \\
+TV FedAvg Vanilla & 4.68(0.00) & 3.61(0.00) \\
+TV Iso & 4.23(0.00) & 3.59(0.00) \\
+\bottomrule
+\end{tabular}
+
