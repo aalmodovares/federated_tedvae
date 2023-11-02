@@ -16,7 +16,8 @@ To run the simulation example, you can use the notebook: ihdp_b_example.ipynb
 To change the data setting: IHDP A/B, modify data_setting variable.
 ````
 data_setting = 'tedvae_ihdp' # you can set tedvae_ihdp_b, the rest of datasets is not available in this example.
-fedavg_strategies='fedavg_all,fedavg_all_vanilla,none' # FedAvg vanilla, FedAvg with propensity adaptation, none is TV isolated
+fedavg_strategies='fedavg_all,fedavg_all_vanilla,none' # fedavg_all: FedAvg on TEDVAE with propensity adaptation,
+#fedavg_all_vanilla: FedAvg on TEDVAE vanilla, none is TV isolated
 ````
 
 Define datasets to run as a list of their indices:
