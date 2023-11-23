@@ -57,14 +57,12 @@ alejandro.almodovar@upm.es
 
 ## CITE AS:
 ````
-@inproceedings{
-almod{\'o}var2023federated,
-title={Federated learning for causal inference using deep generative disentangled models},
-author={Alejandro Almod{\'o}var and Juan Parras and Santiago Zazo},
-booktitle={Deep Generative Models for Health Workshop NeurIPS 2023},
-year={2023},
-url={https://openreview.net/forum?id=r7qL5vM3Aa}
-}
+@inproceedings{almodovar2023federated,
+  title={Federated learning for causal inference using deep generative disentangled models},
+  author={Almod{\'o}var, Alejandro and Parras, Juan and Zazo, Santiago},
+  booktitle={Deep Generative Models for Health Workshop NeurIPS 2023},
+  year={2023}
+}}
 ````
 [1] W. Zhang, L. Liu, and J. Li, “Treatment effect estimation with disentangled latent factors,” in AAAI Conference on Artificial Intelligence, 2020.
 [2] V. Vo, T. N. Hoang, Y. Lee, and T.-Y. Leong, “Federated estimation of causal effects from
